@@ -1,41 +1,81 @@
 # Electricity Bill Management System
 
-## Overview
-
-This project is a simple **Electricity Bill Management System** built using **Python** and **CSV** files for storing user data. The system allows users to add new users, pay bills, check user details, delete users, and view existing users. It manages users' electricity consumption and calculates bill amounts based on the number of units consumed.
+This project provides a simple command-line based Electricity Bill Management System using Python and CSV files for data storage. It allows you to manage users, handle their electricity bill payments, and view or modify user account information.
 
 ## Features
 
-1. **Add a New User**: Enter user details like serial number, name, units consumed, and generate a random User ID. The bill amount is calculated based on the number of units consumed (`unit * 15 Rs.`).
-   
-2. **Pay Electricity Bill**: Pay for consumed units, and the user's balance is updated accordingly.
+- **Add New User:** Register a new user with name, units, and a unique user ID.
+- **Pay Electricity Bill:** Pay for consumed units; updates user balance and remaining units.
+- **Check User Details:** Retrieve and display details of a specific user.
+- **Delete User:** Remove a user from the system using their User ID.
+- **Show Existing Users:** View all current users and their account details.
+- **About Project:** Display information about the project and its structure.
 
-3. **Check User Details**: Retrieve and display all details of a user based on their serial number.
+## How It Works
 
-4. **Delete a User**: Remove a user from the system by their User ID.
+The system stores user data in two CSV files:
+- `data1.csv`: Main user data file (serial number, name, user ID, units, amount).
+- `data2.csv`: Secondary data file (used for display and payment verification).
 
-5. **Show Existing Users**: Display all the existing users stored in the CSV file.
+All user interactions are menu-driven and happen through the terminal.
 
-6. **About the Project**: Displays brief information about the project.
-
-## Project Structure
-
-- **data1.csv**: Stores the complete user data with columns for serial number (`slno`), name, user ID (`uid`), units consumed, and bill amount.
-- **data2.csv**: Stores a subset of the data from `data1.csv` with selected columns (e.g., name).
-
-## Installation
+## Usage
 
 ### Prerequisites
 
-Make sure you have the following installed on your system:
+- Python 3.x
+- `pandas` library
 
-- **Python 3.x**
-- **pandas** library: Install using `pip install pandas`
+Install dependencies via pip if needed:
+```bash
+pip install pandas
+```
 
-### Steps to Run
+### Running the Project
 
-1. Clone the repository or download the source code.
-2. Make sure `data1.csv` and `data2.csv` exist in the specified directory (`E:/Documents/`).
-3. Run the Python script:
+1. Clone the repository.
+2. Ensure `data1.csv` and `data2.csv` are in the project directory.
+3. Run the main script:
 
+```bash
+python electricity.py
+```
 
+4. Follow on-screen prompts to interact with the system.
+
+### Menu Options
+
+```
+--------------------------------------------------
+ ELECTRICITY BILL MANAGEMENT
+--------------------------------------------------
+
+0- ABOUT THE PROJECT
+1- ADD A NEW USER
+2- PAY THE ELECTRICITY BILL
+3- CHECK USER DETAILS
+4- DELETE THE USER
+5- SHOW EXISTING USERS
+6- EXIT THE PROGRAM
+```
+
+## Project Structure
+
+- `electricity.py`: Main Python script containing all business logic.
+- `data1.csv`, `data2.csv`: CSV files used for storing and displaying user data.
+
+## Example
+
+Here's how adding a new user works:
+- Enter serial number, name, and units.
+- The script generates a unique User ID and calculates the initial bill.
+- User data is saved and can be viewed or updated as needed.
+
+## About
+
+This project is aimed at demonstrating basic file handling and user management in Python using CSV files.
+
+**Thank you for checking out this project!**
+
+---
+*Author: satyyyajit*
